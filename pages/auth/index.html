@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#12372a">
+    <meta name="description" content="Secure sign-in for Shaikh China Sourcing ERP">
+    <title>Sign in | Shaikh China Sourcing ERP</title>
+    <link rel="stylesheet" href="../../assets/css/tokens/design-tokens.css">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/global.css">
+    <link rel="stylesheet" href="../../assets/css/pages/auth.css">
+  </head>
+  <body class="auth-page" data-auth-page="sign-in">
+    <main class="auth-layout">
+      <section class="auth-brand-panel" aria-labelledby="brand-heading">
+        <div class="auth-brand-lockup">
+          <span class="auth-brand-mark" aria-hidden="true">SCS</span>
+          <span>
+            <strong>Shaikh China Sourcing</strong>
+            <small>Business ERP</small>
+          </span>
+        </div>
+        <div class="auth-brand-copy">
+          <p class="eyebrow">One connected workspace</p>
+          <h1 id="brand-heading">Projects, finance and sourcing—under control.</h1>
+          <p>Secure access to company operations across China and Lahore, with PKR and CNY accounting built in.</p>
+        </div>
+        <p class="auth-security-note">Protected by Supabase Authentication and organization-level access controls.</p>
+      </section>
+
+      <section class="auth-form-panel">
+        <div class="auth-card">
+          <div data-auth-view="sign-in">
+            <div class="auth-card-heading">
+              <p class="eyebrow">Welcome back</p>
+              <h2>Sign in to your account</h2>
+              <p>Use the email assigned by your administrator.</p>
+            </div>
+
+            <div class="auth-alert auth-alert--warning" data-config-alert hidden>
+              Authentication setup is not connected yet. Add the Supabase project URL and publishable key to enable sign-in.
+            </div>
+            <div class="auth-alert" data-form-alert role="status" aria-live="polite" hidden></div>
+
+            <form class="auth-form" data-sign-in-form novalidate>
+              <div class="form-field">
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" autocomplete="username" inputmode="email" required placeholder="name@shaikhchinasourcing.com">
+                <p class="field-error" data-error-for="email"></p>
+              </div>
+              <div class="form-field">
+                <div class="label-row">
+                  <label for="password">Password</label>
+                  <button class="text-button" type="button" data-show-recovery>Forgot password?</button>
+                </div>
+                <div class="password-field">
+                  <input id="password" name="password" type="password" autocomplete="current-password" required>
+                  <button class="password-toggle" type="button" data-password-toggle aria-label="Show password">Show</button>
+                </div>
+                <p class="field-error" data-error-for="password"></p>
+              </div>
+              <button class="primary-button" type="submit" data-submit-button>
+                <span data-button-label>Sign in</span>
+                <span class="button-spinner" aria-hidden="true" hidden></span>
+              </button>
+            </form>
+          </div>
+
+          <div data-auth-view="recovery" hidden>
+            <button class="back-button" type="button" data-show-sign-in aria-label="Back to sign in">← Back to sign in</button>
+            <div class="auth-card-heading">
+              <p class="eyebrow">Account recovery</p>
+              <h2>Reset your password</h2>
+              <p>We’ll email a secure recovery link if the account exists.</p>
+            </div>
+            <div class="auth-alert" data-recovery-alert role="status" aria-live="polite" hidden></div>
+            <form class="auth-form" data-recovery-form novalidate>
+              <div class="form-field">
+                <label for="recovery-email">Email address</label>
+                <input id="recovery-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+                <p class="field-error" data-error-for="recovery-email"></p>
+              </div>
+              <button class="primary-button" type="submit" data-recovery-submit>Send recovery link</button>
+            </form>
+          </div>
+
+          <div data-auth-view="pending" hidden>
+            <div class="pending-icon" aria-hidden="true">✓</div>
+            <div class="auth-card-heading auth-card-heading--centered">
+              <p class="eyebrow">Account verified</p>
+              <h2>Access is awaiting approval</h2>
+              <p>Your sign-in works, but an administrator must assign you to an organization before you can open the ERP.</p>
+            </div>
+            <button class="secondary-button" type="button" data-pending-sign-out>Sign out</button>
+          </div>
+
+          <p class="auth-support">Need access? Contact your Shaikh China Sourcing administrator.</p>
+        </div>
+      </section>
+    </main>
+
+    <noscript>
+      <main class="noscript-message"><h1>JavaScript is required</h1><p>Please enable JavaScript to sign in.</p></main>
+    </noscript>
+    <script src="../../assets/vendor/supabase/supabase.js"></script>
+    <script type="module" src="../../assets/js/modules/auth.js"></script>
+  </body>
+</html>
